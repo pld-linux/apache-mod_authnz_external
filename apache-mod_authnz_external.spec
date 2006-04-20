@@ -29,46 +29,47 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sysconfdir	%(%{apxs} -q SYSCONFDIR 2>/dev/null)
 
 %description
-This module allows you to use any command line program to authenticate a user.
+This module allows you to use any command line program to authenticate
+a user.
 
 %description -l cs
-Balíèek mod_auth_external slou¾í pro omezení pøístupu k dokumentùm, které
-poskytuje WWW server Apache. Jména a hesla jsou kontrolována pomocí
-jakéhokoliv pøíkazu (jeho návratovým kódem).
+Balíèek mod_auth_external slou¾í pro omezení pøístupu k dokumentùm,
+které poskytuje WWW server Apache. Jména a hesla jsou kontrolována
+pomocí jakéhokoliv pøíkazu (jeho návratovým kódem).
 
 %description -l de
-Mod_auth_external kann verwendet werden, um den Zugriff auf von einem Web-
-Server bediente Dokumente zu beschränken, indem es den Rückcode eines
-gegebenen arbiträren Befehls prüft.
+Mod_auth_external kann verwendet werden, um den Zugriff auf von einem
+Web- Server bediente Dokumente zu beschränken, indem es den Rückcode
+eines gegebenen arbiträren Befehls prüft.
 
 %description -l es
-Mod_auth_external puede usarse para limitar el acceso a documentos servidos
-desde un servidor web verificando el código de retorno de un comando
-arbitrario especificado.
+Mod_auth_external puede usarse para limitar el acceso a documentos
+servidos desde un servidor web verificando el código de retorno de un
+comando arbitrario especificado.
 
 %description -l fr
-Mod_auth_external peut être utilisé pour limiter l'accès à des documents
-servis par un serveur Web en vérifiant le code de retour d'une
-commande spécifiée arbitraire.
+Mod_auth_external peut être utilisé pour limiter l'accès à des
+documents servis par un serveur Web en vérifiant le code de retour
+d'une commande spécifiée arbitraire.
 
 %description -l it
-Mod_auth_external può essere utilizzato per limitare l'accesso ai documenti
-serviti da un server Web controllando il codice di ritorno di un dato
-comando arbitrario.
+Mod_auth_external può essere utilizzato per limitare l'accesso ai
+documenti serviti da un server Web controllando il codice di ritorno
+di un dato comando arbitrario.
 
 %description -l ja
-Mod_auth_external ¤ÏÇ¤°Õ¤Ë»ØÄê¤µ¤ì¤¿¥³¥Þ¥ó¥É¤ÎÌá¤ê¥³¡¼¥É¤ò¥Á¥§¥Ã¥¯¤¹¤ë¤³¤È
-¤Ë¤è¤Ã¤Æ¡¢Web ¥µ¡¼¥Ð¡¼¤¬Äó¶¡¤¹¤ë¥É¥­¥å¥á¥ó¥È¤Ø¤Î¥¢¥¯¥»¥¹¤òÀ©¸Â¤¹¤ë¤³¤È
-¤¬¤Ç¤­¤Þ¤¹¡£
+Mod_auth_external
+¤ÏÇ¤°Õ¤Ë»ØÄê¤µ¤ì¤¿¥³¥Þ¥ó¥É¤ÎÌá¤ê¥³¡¼¥É¤ò¥Á¥§¥Ã¥¯¤¹¤ë¤³¤È ¤Ë¤è¤Ã¤Æ¡¢Web
+¥µ¡¼¥Ð¡¼¤¬Äó¶¡¤¹¤ë¥É¥­¥å¥á¥ó¥È¤Ø¤Î¥¢¥¯¥»¥¹¤òÀ©¸Â¤¹¤ë¤³¤È ¤¬¤Ç¤­¤Þ¤¹¡£
 
 %description -l pl
 Ten modu³ pozwala na u¿ycie dowolnego programu dzia³aj±cego z linii
 poleceñ do uwierzytelniania u¿ytkownika.
 
 %description -l sv
-Mod_auth_external kan användas för att begränsa åtkomsten till dokument
-servade av en webbserver genom att kontrollera returkoden från ett
-godtyckligt angivet kommando.
+Mod_auth_external kan användas för att begränsa åtkomsten till
+dokument servade av en webbserver genom att kontrollera returkoden
+från ett godtyckligt angivet kommando.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
