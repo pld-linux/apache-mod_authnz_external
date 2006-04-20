@@ -79,7 +79,7 @@ från ett godtyckligt angivet kommando.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_pkglibdir},%{_sysconfdir}/httpd.conf/}
+install -d $RPM_BUILD_ROOT{%{_pkglibdir},%{_sysconfdir}/httpd.conf}
 
 install .libs/mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}
 echo 'LoadModule %{mod_name}_module modules/mod_%{mod_name}.so' > \
