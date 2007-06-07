@@ -19,7 +19,7 @@ Group:		Networking/Daemons
 Source0:	http://unixpapa.com/software/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	5051bffe6a3992336f4a9f84430a58d2
 URL:		http://unixpapa.com/mod_auth_external.html
-BuildRequires:	%{apxs}
+BuildRequires:	apache-apxs >= 2.0
 BuildRequires:	apache-devel >= 2.2
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	apache(modules-api) = %apache_modules_api
