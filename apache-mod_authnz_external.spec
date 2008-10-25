@@ -15,7 +15,7 @@ Name:		apache-mod_%{mod_name}
 Version:	3.1.0
 Release:	1
 License:	BSD
-Group:		Networking/Daemons
+Group:		Networking/Daemons/HTTP
 Source0:	http://unixpapa.com/software/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	5051bffe6a3992336f4a9f84430a58d2
 URL:		http://unixpapa.com/mod_auth_external.html
