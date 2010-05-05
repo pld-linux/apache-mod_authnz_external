@@ -12,13 +12,13 @@ Summary(pt.UTF-8):	Um módulo de autenticação de LDAP para o servidor Web Apac
 Summary(sl.UTF-8):	Osnovna avtentikacija za spletni strežnik Apache, z uporabo poljubnih lupinskih ukazov
 Summary(sv.UTF-8):	Grundläggande autentisering för webbservern Apache med valfria skalkommandon
 Name:		apache-mod_%{mod_name}
-Version:	3.2.2
+Version:	3.2.5
 Release:	1
 License:	BSD
 Group:		Networking/Daemons/HTTP
-Source0:	http://unixpapa.com/software/mod_%{mod_name}-%{version}.tar.gz
-# Source0-md5:	a62a356f20d6b0f8bcb54390cc6b01c6
-URL:		http://unixpapa.com/mod_auth_external.html
+Source0:	http://mod-auth-external.googlecode.com/files/mod_%{mod_name}-%{version}.tar.gz
+# Source0-md5:	ff1e12ac8b5fc72296334865e74805e0
+URL:		http://code.google.com/p/mod-auth-external/
 BuildRequires:	%{apxs}
 BuildRequires:	apache-devel >= 2.2
 BuildRequires:	rpmbuild(macros) >= 1.268
