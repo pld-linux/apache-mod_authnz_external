@@ -1,5 +1,5 @@
-%define	mod_name	authnz_external
-%define apxs		/usr/sbin/apxs
+%define		mod_name	authnz_external
+%define		apxs		/usr/sbin/apxs
 Summary:	Basic authentication for the Apache Web server using arbitrary shell commands
 Summary(cs.UTF-8):	Základní autentizace pro WWW server Apache pomocí shellových příkazů
 Summary(da.UTF-8):	En autenticeringsmodul for webtjeneren Apache hvor man kan bruge vilkårlige skal-kommandoer
@@ -13,7 +13,7 @@ Summary(sl.UTF-8):	Osnovna avtentikacija za spletni strežnik Apache, z uporabo 
 Summary(sv.UTF-8):	Grundläggande autentisering för webbservern Apache med valfria skalkommandon
 Name:		apache-mod_%{mod_name}
 Version:	3.2.5
-Release:	1
+Release:	2
 License:	BSD
 Group:		Networking/Daemons/HTTP
 Source0:	http://mod-auth-external.googlecode.com/files/mod_%{mod_name}-%{version}.tar.gz
@@ -26,7 +26,7 @@ Requires:	apache(modules-api) = %apache_modules_api
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_pkglibdir	%(%{apxs} -q LIBEXECDIR 2>/dev/null)
-%define		_sysconfdir	%(%{apxs} -q SYSCONFDIR 2>/dev/null)
+%define		_sysconfdir	%(%{apxs} -q SYSCONFDIR 2>/dev/null)/conf.d
 
 %description
 This module allows you to use any command line program to authenticate
@@ -79,11 +79,11 @@ från ett godtyckligt angivet kommando.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_pkglibdir},%{_sysconfdir}/httpd.conf}
+install -d $RPM_BUILD_ROOT{%{_pkglibdir},%{_sysconfdir}}
 
-install .libs/mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}
+install -p .libs/mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}
 echo 'LoadModule %{mod_name}_module modules/mod_%{mod_name}.so' > \
-	$RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf/90_mod_%{mod_name}.conf
+	$RPM_BUILD_ROOT%{_sysconfdir}/90_mod_%{mod_name}.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -99,5 +99,5 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc TODO AUTHENTICATORS CHANGES README INSTALL test mysql
-%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/httpd.conf/*_mod_%{mod_name}.conf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*_mod_%{mod_name}.conf
 %attr(755,root,root) %{_pkglibdir}/*.so
