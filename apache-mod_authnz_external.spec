@@ -12,12 +12,13 @@ Summary(pt.UTF-8):	Um módulo de autenticação de LDAP para o servidor Web Apac
 Summary(sl.UTF-8):	Osnovna avtentikacija za spletni strežnik Apache, z uporabo poljubnih lupinskih ukazov
 Summary(sv.UTF-8):	Grundläggande autentisering för webbservern Apache med valfria skalkommandon
 Name:		apache-mod_%{mod_name}
-Version:	3.2.5
-Release:	2
+Version:	3.3.1
+Release:	1
 License:	BSD
 Group:		Networking/Daemons/HTTP
 Source0:	http://mod-auth-external.googlecode.com/files/mod_%{mod_name}-%{version}.tar.gz
-# Source0-md5:	ff1e12ac8b5fc72296334865e74805e0
+# Source0-md5:	4cb3f16ff85b62fbc2cc73bac406bb67
+Patch0:		mod_authnz_external-apache24.patch
 URL:		http://code.google.com/p/mod-auth-external/
 BuildRequires:	%{apxs}
 BuildRequires:	apache-devel >= 2.2
@@ -73,6 +74,7 @@ från ett godtyckligt angivet kommando.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
+%patch0 -p1
 
 %build
 %{apxs} -c mod_%{mod_name}.c -o mod_%{mod_name}.la
@@ -98,6 +100,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc TODO AUTHENTICATORS CHANGES README INSTALL test mysql
+%doc TODO AUTHENTICATORS CHANGES README INSTALL test
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*_mod_%{mod_name}.conf
 %attr(755,root,root) %{_pkglibdir}/*.so
