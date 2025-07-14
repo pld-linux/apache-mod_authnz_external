@@ -74,7 +74,7 @@ från ett godtyckligt angivet kommando.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{apxs} -c mod_%{mod_name}.c -o mod_%{mod_name}.la
